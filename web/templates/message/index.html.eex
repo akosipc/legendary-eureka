@@ -1,0 +1,13 @@
+<%= render "form.html", changeset: @changeset, action: message_path(@conn, :create) %>
+
+<%= for message <- @messages do %>
+  <div class="row">
+    <strong>
+      <%= message.username %> :
+      [ <%= message.inserted_at %> ]
+    </strong>
+    <span>
+      <%= message.content %>
+    </span>
+  </div>
+<% end %>
